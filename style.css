@@ -112,15 +112,13 @@ a {
 }
 
 .form {
-  padding: 24px;
-  width: 40%;
+  padding: 2rem 4rem;
+  width: 50%;
   height: 100vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  margin-inline: auto;
   gap: 1.5rem;
-  position: relative;
 }
 
 .form::-webkit-scrollbar {
@@ -251,3 +249,38 @@ a {
   color: var(--neutral-10);
 }
 /* END SIGN UP PAGE */
+
+/* SIGN UP SUCCESS */
+.signup-success {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.wrapper img {
+  object-fit: cover;
+  max-width: 60%;
+  height: 80%;
+}
+
+.wrapper h2 {
+  font-size: 3rem;
+  color: var(--primary-main);
+}
+
+.text-wrap {
+  margin-block: 3rem;
+}
+
+.wrapper .login-btn {
+  display: inline-block;
+  color: var(--neutral-10);
+  font-size: 1.25rem;
+  width: 18.75rem;
+}
+
+/* END SIGN UP SUCCESS */
