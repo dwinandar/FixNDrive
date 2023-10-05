@@ -51,18 +51,21 @@ a {
 
 .desktop-navbar {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  margin-inline: 80px;
+  width: 90%;
+  margin-inline: 5%;
   padding: 1rem 2rem;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08),
     0px 0px 4px 0px rgba(0, 0, 0, 0.04);
-  margin-top: 2.5rem;
+  margin-top: 2rem;
+  z-index: 1;
 }
 
-.desktop-navbar ul {
+.desktop-navbar > ul {
   display: flex;
   gap: 1rem;
 }
@@ -99,6 +102,48 @@ a {
 .active-nav {
   font-weight: 700;
   border-bottom: 2px solid var(--primary-main);
+}
+
+.profile-nav {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-nav :nth-child(2) {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.profile-wrap {
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-dropdown {
+  bottom: -180%;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background: var(--neutral-10);
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+}
+
+.profile-dropdown.active {
+  display: flex;
+}
+
+.profile-dropdown li {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.profile-dropdown li:hover {
+  background-color: var(--neutral-40);
 }
 
 /* END DESKTOP NAVBAR */
@@ -213,15 +258,9 @@ a {
   padding: 10px;
 }
 
-.terms-policy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #terms-label {
   font-weight: normal;
-  font-size: 12px;
+  vertical-align: middle;
 }
 
 .btn-wrap-signup {
@@ -247,6 +286,12 @@ a {
 .btn-wrap-signup :nth-child(2) {
   background-color: var(--primary-main);
   color: var(--neutral-10);
+}
+
+input#terms-label {
+  accent-color: var(--primary-main);
+  width: 1rem;
+  height: 1rem;
 }
 /* END SIGN UP PAGE */
 
@@ -284,3 +329,22 @@ a {
 }
 
 /* END SIGN UP SUCCESS */
+
+/* NO NOTIF YET */
+.no-notif {
+  justify-content: center;
+}
+
+.no-notif-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.no-notif-wrap h2 {
+  font-size: 2rem;
+  color: var(--primary-main);
+}
+/* END NO NOTIF YET */
