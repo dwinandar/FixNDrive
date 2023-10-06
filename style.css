@@ -348,3 +348,55 @@ input#terms-label {
   color: var(--primary-main);
 }
 /* END NO NOTIF YET */
+
+/* RESET PASSWORD */
+.reset-pass {
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+img.resetpass-img {
+  width: 30%;
+}
+
+.reset-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading-reset {
+  font-size: 2.8rem;
+  color: var(--primary-main);
+}
+
+.wrap-input {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.reset-btn {
+  font-size: 1.25rem;
+  border-radius: 6px;
+  background: var(--primary-main);
+  color: var(--neutral-10);
+  border: none;
+  cursor: pointer;
+  padding-block: 8px;
+  width: 15rem;
+}
+/* END RESET PASSWORD */
+
+/* RESET SUCCESS */
+.reset-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reset-success :last-child {
+  margin-top: 1rem;
+}
+/* END RESET SUCCESS */
