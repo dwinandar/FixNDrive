@@ -400,3 +400,38 @@ img.resetpass-img {
   margin-top: 1rem;
 }
 /* END RESET SUCCESS */
+
+/* CARD & CARE PAGE */
+.heading-care {
+  font-size: 4rem;
+  color: var(--primary-main);
+}
+
+.motor-care,
+.car-care {
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: auto;
+  width: fit-content;
+  padding-block: 10rem;
+  gap: 2rem;
+  padding-inline: 5rem;
+}
+
+.card-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-item {
+  padding-block: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* END CARD & CARE PAGE */
