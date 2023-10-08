@@ -51,6 +51,7 @@ a {
 
 .desktop-navbar {
   display: flex;
+  flex-wrap: wrap;
   position: fixed;
   justify-content: space-between;
   align-items: center;
@@ -68,6 +69,7 @@ a {
 .desktop-navbar > ul {
   display: flex;
   gap: 1rem;
+  flex: wrap;
 }
 
 .desktop-navbar ul li {
@@ -147,6 +149,58 @@ a {
 }
 
 /* END DESKTOP NAVBAR */
+
+/* HOME PAGE */
+.home {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  gap: 1.5rem;
+}
+
+.home-banner {
+  object-fit: cover;
+  width: 90%;
+  max-width: 75rem;
+  max-height: 27rem;
+}
+
+.home-heading {
+  text-align: center;
+}
+
+.home-card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.home-card {
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.homecard-body {
+  padding: 0.5rem 1rem;
+}
+
+.find-out-btn {
+  margin-block: 1rem;
+  font-size: medium;
+  font-weight: 700;
+  border-radius: 6px;
+  background: var(--primary-main);
+  color: var(--neutral-10);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+/* END HOME PAGE */
 
 /* LOGIN PAGE */
 .section {
@@ -268,7 +322,8 @@ a {
   gap: 24px;
 }
 
-.btn-wrap-signup > * {
+.btn-wrap-signup > *,
+.btn-wrap-needlogin :first-child {
   padding: 8px 16px;
   width: 50%;
   border-radius: 6px;
@@ -277,7 +332,8 @@ a {
   cursor: pointer;
 }
 
-.btn-wrap-signup :nth-child(1) {
+.btn-wrap-signup,
+.btn-wrap-needlogin :nth-child(1) {
   border: 1px solid var(--neutral-40);
   background: var(--neutral-30);
   color: var(--neutral-60);
@@ -330,12 +386,14 @@ input#terms-label {
 
 /* END SIGN UP SUCCESS */
 
-/* NO NOTIF YET */
-.no-notif {
+/* NO NOTIF YET & NEED LOGIN*/
+.no-notif,
+.need-login {
   justify-content: center;
 }
 
-.no-notif-wrap {
+.no-notif-wrap,
+.need-login-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,11 +401,28 @@ input#terms-label {
   margin-top: 2rem;
 }
 
-.no-notif-wrap h2 {
+.need-login-wrap {
+  padding-top: 3rem;
+}
+
+.no-notif-wrap h2,
+.need-login-wrap h2 {
   font-size: 2rem;
   color: var(--primary-main);
 }
-/* END NO NOTIF YET */
+
+.btn-wrap-needlogin {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-wrap-needlogin button.back-btn,
+button.login-btn {
+  padding-inline: 3rem;
+}
+
+/* END NO NOTIF YET & NEED LOGIN*/
 
 /* RESET PASSWORD */
 .reset-pass {
@@ -367,7 +442,8 @@ img.resetpass-img {
   gap: 1rem;
 }
 
-.heading-reset {
+.heading-reset,
+.home-heading {
   font-size: 2.8rem;
   color: var(--primary-main);
 }

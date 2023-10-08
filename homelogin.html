@@ -15,11 +15,12 @@
     <nav class="desktop-navbar">
       <img src="assets/Logo.jpg" alt="logo-fixndrive" />
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/" class="active-nav">Home</a></li>
         <li>
           <div class="dropdown">
-            <span class="dropbtn">Services</span>
-            <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+            <span class="dropbtn"
+              >Services <img src="assets/arrow-down.svg" alt="arrow-down-icon"
+            /></span>
             <div class="dropdown-content">
               <a href="#">Rekomendasi Perawatan</a>
               <hr />
@@ -33,7 +34,9 @@
         <li><a href="">Contact Us</a></li>
       </ul>
       <div class="profile-nav">
-        <img src="assets/notif-icon.svg" alt="notif-icon" />
+        <a href="/nonotif.html"
+          ><img src="assets/notif-icon.svg" alt="notif-icon"
+        /></a>
         <div class="profile-wrap">
           <img src="assets/profile-pic.png" alt="profile-pic" />
           <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
@@ -45,12 +48,34 @@
         </div>
       </div>
     </nav>
-    <main class="section no-notif">
-      <div class="no-notif-wrap">
-        <img src="assets/no-notif-yet.jpg" alt="no-notif-yet" width="65%" />
-        <h2>No Notifications Yet</h2>
+    <main class="section home">
+      <img src="assets/home-banner.jpg" alt="home-banner" class="home-banner" />
+      <h2 class="home-heading">Vehicle Maintenance Tips</h2>
+      <div class="home-card-wrap">
+        <div class="home-card">
+          <img src="assets/homecard-img1.jpg" alt="homecard-img1" />
+          <div class="homecard-body">
+            <p>Motorcycle Battery Maintenance Tips</p>
+            <button class="find-out-btn">Find out more</button>
+          </div>
+        </div>
+        <div class="home-card">
+          <img src="assets/homecard-img2.jpg" alt="homecard-img1" />
+          <div class="homecard-body">
+            <p>Motorcycle Battery Maintenance Tips</p>
+            <button class="find-out-btn">Find out more</button>
+          </div>
+        </div>
+        <div class="home-card">
+          <img src="assets/homecard-img3.jpg" alt="homecard-img1" />
+          <div class="homecard-body">
+            <p>Motorcycle Battery Maintenance Tips</p>
+            <button class="find-out-btn">Find out more</button>
+          </div>
+        </div>
       </div>
     </main>
+
     <script src="main.js"></script>
   </body>
 </html>

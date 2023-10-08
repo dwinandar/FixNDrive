@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixNDrive</title>
+    <title>FixNDrive | Need to Login</title>
     <link rel="icon" type="image/svg+xml" href="assets/fnd-icon.svg" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -15,11 +15,13 @@
     <nav class="desktop-navbar">
       <img src="assets/Logo.jpg" alt="logo-fixndrive" />
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/" class="active-nav">Home</a></li>
         <li>
           <div class="dropdown">
-            <span class="dropbtn">Services</span>
-            <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+            <span class="dropbtn"
+              >Services <img src="assets/arrow-down.svg" alt="arrow-down-icon"
+            /></span>
+
             <div class="dropdown-content">
               <a href="#">Rekomendasi Perawatan</a>
               <hr />
@@ -32,23 +34,20 @@
         <li><a href="">Forum</a></li>
         <li><a href="">Contact Us</a></li>
       </ul>
-      <div class="profile-nav">
-        <img src="assets/notif-icon.svg" alt="notif-icon" />
-        <div class="profile-wrap">
-          <img src="assets/profile-pic.png" alt="profile-pic" />
-          <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
-
-          <ul class="profile-dropdown" id="profile-dropdown">
-            <li>Settings</li>
-            <li>Logout</li>
-          </ul>
-        </div>
+      <div class="btn-nav">
+        <a href="/login.html" class="login-btn-nav">Login</a>
+        <a href="/signup.html" class="signup-btn">Sign up</a>
       </div>
     </nav>
-    <main class="section no-notif">
-      <div class="no-notif-wrap">
-        <img src="assets/no-notif-yet.jpg" alt="no-notif-yet" width="65%" />
-        <h2>No Notifications Yet</h2>
+    <main class="section need-login">
+      <div class="need-login-wrap">
+        <img src="assets/need-login.jpg" alt="need-login-img" width="65%" />
+        <h2>To access this feature</h2>
+        <h2>you must login first!</h2>
+        <div class="btn-wrap-needlogin">
+          <button class="back-btn">Back</button>
+          <button class="login-btn">Login</button>
+        </div>
       </div>
     </main>
     <script src="main.js"></script>
