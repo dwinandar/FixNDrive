@@ -522,3 +522,24 @@ img.resetpass-img {
 }
 
 /* END CARD & CARE PAGE */
+
+/* MEDIA SCREEN */
+@media only screen and (max-width: 768px) {
+  .card-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .motor-care,
+  .car-care {
+    padding-inline: 2rem;
+    padding-block: 12rem;
+  }
+}
+
+/* END MEDIA SCREEN */
