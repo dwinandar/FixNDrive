@@ -126,7 +126,7 @@ a {
 .profile-dropdown {
   bottom: -180%;
   right: 0;
-  display: none;
+  opacity: 0;
   flex-direction: column;
   position: absolute;
   background: var(--neutral-10);
@@ -135,8 +135,19 @@ a {
     0px 0px 4px 0px rgba(0, 0, 0, 0.04);
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .profile-dropdown.active {
   display: flex;
+  opacity: 1;
+  animation: fadein 0.3s;
 }
 
 .profile-dropdown li {
