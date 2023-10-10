@@ -22,33 +22,6 @@ a {
 
 /* DESKTOP NAVBAR */
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--neutral-10);
-  width: max-content;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  width: 200px;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .desktop-navbar {
   display: flex;
   flex-wrap: wrap;
@@ -76,7 +49,7 @@ a {
   list-style: none;
 }
 
-.desktop-navbar ul li a {
+.desktop-navbar > ul:not(:nth-child(2)) li a {
   padding: 4px;
 }
 
@@ -118,7 +91,8 @@ a {
   align-items: center;
 }
 
-.profile-wrap {
+.profile-wrap,
+.service-wrap {
   cursor: pointer;
   position: relative;
 }
@@ -135,6 +109,37 @@ a {
     0px 0px 4px 0px rgba(0, 0, 0, 0.04);
 }
 
+.service-dropdown {
+  position: absolute;
+  width: max-content;
+  opacity: 0;
+  background: var(--neutral-10);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+  display: none;
+  color: var(--neutral-10);
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--neutral-40);
+}
+
+.service-dropdown li:not(:last-child) {
+  border-bottom: 1px solid var(--neutral-40);
+}
+
+.service-dropdown li a {
+  display: block;
+  border-radius: 5px;
+  padding-block: 0.7rem;
+  padding-inline: 0.5rem;
+}
+
+.service-dropdown li a:hover {
+  color: var(--neutral-10);
+  background: var(--primary-main);
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -146,6 +151,12 @@ a {
 
 .profile-dropdown.active {
   display: flex;
+  opacity: 1;
+  animation: fadein 0.3s;
+}
+
+.service-dropdown.active {
+  display: block;
   opacity: 1;
   animation: fadein 0.3s;
 }
@@ -523,10 +534,21 @@ img.resetpass-img {
 
 /* END CARD & CARE PAGE */
 
+/* MAP */
+.map {
+  justify-content: center;
+  align-items: center;
+}
+/* END MAP */
+
 /* MEDIA SCREEN */
 @media only screen and (max-width: 768px) {
   .card-wrap {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .desktop-navbar {
+    gap: 1.5rem;
   }
 }
 
@@ -539,6 +561,18 @@ img.resetpass-img {
   .car-care {
     padding-inline: 2rem;
     padding-block: 12rem;
+  }
+
+  .desktop-navbar > ul {
+    flex-direction: column;
+  }
+
+  .desktop-navbar {
+    justify-content: center;
+  }
+
+  .section {
+    padding-top: 20rem;
   }
 }
 
