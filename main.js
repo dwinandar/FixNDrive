@@ -4,7 +4,8 @@ const navbarLogin = document.getElementById("navbar-login");
 
 const path = window.location.pathname;
 navbarNotLogin
-  ? (navbarNotLogin.innerHTML = `<img src="assets/Logo.jpg" alt="logo-fixndrive" />
+  ? (navbarNotLogin.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+
 <ul>
   <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Home</a></li>
   <li>
@@ -20,12 +21,12 @@ navbarNotLogin
       <ul class="service-dropdown" id="service-dropdown">
         <li><a href="/carcare.html">Car Care</a></li>
         <li><a href="/motorcare.html">Motor Care</a></li>
-        <li><a href="#">Schedule</a></li>
+        <li><a href="/needlogin.html">Schedule</a></li>
         <li><a href="#">Treatment Location</a></li>
       </ul>
     </div>
   </li>
-  <li><a href="#">Forum</a></li>
+  <li><a href="/needlogin.html">Forum</a></li>
   <li><a href="#">Contact Us</a></li>
 </ul>
 <div class="btn-nav">
@@ -33,7 +34,7 @@ navbarNotLogin
   <a href="/signup.html" class="signup-btn">Sign up</a>
 </div>`)
   : navbarLogin
-  ? (navbarLogin.innerHTML = `<img src="assets/Logo.jpg" alt="logo-fixndrive" />
+  ? (navbarLogin.innerHTML = `<a href="/homelogin.html"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
   <ul>
     <li><a href="/" class=${
       path === "/homelogin.html" ? "active-nav" : ""
@@ -204,6 +205,50 @@ if (motorCardElem) {
 } else if (carCardElem) {
   reusableCardCare(carcareItems, carCardElem);
 }
+
+// FOOTER COMPONENT
+const footer = document.getElementById("footer");
+
+footer
+  ? (footer.innerHTML = `<div class="footer-top">
+<div>
+  <a href="#"><img src="assets/Logo-footer.svg" alt="footer-logo" /></a>
+</div>
+<ul>
+  <h3>See some our content</h3>
+  <h4>Resources</h4>
+  <li><a href="carcare.html">Car care</a></li>
+  <li><a href="/motorcare.html">Motor Care</a></li>
+  <h4>Community</h4>
+  <li><a href="/forum.html">Forum</a></li>
+  <h4>Find Us</h4>
+  <li><a href="/contact.html">Contact</a></li>
+</ul>
+<div>
+  <h3>Join a Newsletter</h3>
+  <form>
+    <label for="news">Your Email</label>
+    <input
+      type="email"
+      class="subs-input"
+      name="news"
+      id="news"
+      placeholder="Enter Your Email"
+    />
+    <button class="subs-btn">Subscribe</button>
+  </form>
+</div>
+</div>
+<div class="footer-bot">
+<div>
+  <p>Copyright &copy; 2023 FixNDrive. All Rights Reserved.</p>
+</div>
+<div>
+  <p>Terms of Service</p>
+  <p>Privacy Policy</p>
+</div>
+</div>`)
+  : null;
 
 // HERE API
 // var platform = new H.service.Platform({

@@ -2,10 +2,14 @@
 
 :root {
   --primary-main: #4c4ddc;
+  --primary-pressed: #21217a;
+  --primary-hover: #3334cc;
   --neutral-10: #fff;
   --neutral-30: #ededed;
   --neutral-40: #e0e0e0;
   --neutral-60: #9e9e9e;
+  --secondary-main: #f2994a;
+  --secondary-surface: #fcebdb;
 }
 
 * {
@@ -14,6 +18,7 @@
   box-sizing: border-box;
   color: #000;
   font-family: "Product Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -38,7 +43,7 @@ li {
   background: #fff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08),
     0px 0px 4px 0px rgba(0, 0, 0, 0.04);
-  margin-top: 2rem;
+  margin-top: 1.3rem;
   border: 1px solid var(--neutral-30);
   z-index: 1;
 }
@@ -57,7 +62,7 @@ li {
 
 .desktop-navbar > ul > li > a:hover,
 .dropbtn:hover {
-  color: var(--primary-main);
+  color: var(--primary-hover);
 }
 
 .btn-nav {
@@ -71,7 +76,12 @@ li {
   background-color: var(--primary-main);
   padding: 6px 16px;
   border-radius: 6px;
+  border: 1px solid var(--primary-main);
   font-size: 1.1rem;
+}
+
+.login-btn-nav:hover {
+  background-color: var(--primary-hover);
 }
 
 .btn-nav .signup-btn {
@@ -81,6 +91,11 @@ li {
   border: 1px solid var(--neutral-40);
   background: var(--neutral-30);
   font-size: 1.1rem;
+}
+
+.signup-btn:hover {
+  background-color: var(--primary-hover);
+  color: var(--neutral-10);
 }
 
 .active-nav {
@@ -146,7 +161,7 @@ li {
 
 .service-dropdown li a:hover {
   color: var(--neutral-10);
-  background: var(--primary-main);
+  background: var(--primary-hover);
 }
 
 @keyframes fadein {
@@ -186,8 +201,7 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding: 12% 0 5% 0;
   gap: 1.5rem;
 }
 
@@ -230,6 +244,10 @@ li {
   border: none;
   cursor: pointer;
   padding: 10px;
+}
+
+.find-out-btn:hover {
+  background-color: var(--primary-hover);
 }
 /* END HOME PAGE */
 
@@ -304,6 +322,10 @@ li {
   padding: 10px;
 }
 
+.login-btn:hover {
+  background: var(--primary-hover);
+}
+
 .login-banner {
   object-fit: cover;
   width: 55%;
@@ -365,9 +387,12 @@ li {
 
 .btn-wrap-signup,
 .btn-wrap-needlogin :nth-child(1) {
+  color: var(--neutral-60);
+}
+
+.btn-border-gray {
   border: 1px solid var(--neutral-40);
   background: var(--neutral-30);
-  color: var(--neutral-60);
 }
 
 .btn-wrap-signup :nth-child(2) {
@@ -448,9 +473,10 @@ input#terms-label {
   gap: 1rem;
 }
 
-.btn-wrap-needlogin button.back-btn,
-button.login-btn {
+.btn-wrap-needlogin a.back-btn,
+a.login-btn {
   padding-inline: 3rem;
+  border: 1px solid var(--neutral-40);
 }
 
 /* END NO NOTIF YET & NEED LOGIN*/
@@ -519,10 +545,10 @@ img.resetpass-img {
   flex-direction: column;
   justify-content: center;
   margin-inline: auto;
-  width: fit-content;
-  padding-block: 10rem;
+  padding-block: 10%;
   gap: 2rem;
   padding-inline: 5rem;
+  overflow-x: hidden;
 }
 
 .card-wrap {
@@ -550,10 +576,104 @@ img.resetpass-img {
 }
 /* END MAP */
 
+/* FOOTER */
+footer p,
+footer h3,
+footer h4,
+footer label {
+  color: var(--neutral-10);
+}
+
+.footer-top {
+  background-color: var(--primary-hover);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem 1.5rem 0px 0px;
+}
+
+.footer-top form {
+  margin-top: 10px;
+  display: grid;
+  width: 18rem;
+}
+
+.subs-input,
+.subs-btn {
+  width: 100%;
+}
+
+.subs-btn {
+  padding: 10px 16px;
+  color: var(--neutral-10);
+  background-color: #21217a;
+  border: none;
+  border-radius: 5px;
+  margin-top: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.subs-btn:hover {
+  background: var(--primary-main);
+}
+
+.subs-input {
+  padding: 1rem 0.5rem;
+  border-radius: 5px;
+  background: var(--secondary-surface);
+  border: 1px solid var(--secondary-main);
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.footer-bot {
+  background-color: var(--primary-pressed);
+  color: var(--neutral-10);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 1.5rem;
+}
+
+.footer-bot :last-child {
+  display: flex;
+  gap: 3rem;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+}
+
+footer ul h4 {
+  margin-top: 10px;
+}
+
+footer ul li {
+  text-indent: 5px;
+}
+
+footer ul li a {
+  color: var(--neutral-10);
+  transition: all 0.3s;
+}
+footer ul li a:hover {
+  padding-left: 5px;
+  border-left: 1px solid var(--neutral-10);
+}
+
+/* END FOOTER */
+
 /* MEDIA SCREEN */
 @media only screen and (max-width: 768px) {
   .card-wrap {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .desktop-navbar {
@@ -570,10 +690,6 @@ img.resetpass-img {
 }
 
 @media only screen and (max-width: 480px) {
-  .card-wrap {
-    grid-template-columns: 1fr;
-  }
-
   .motor-care,
   .car-care {
     padding-inline: 2rem;
@@ -583,14 +699,24 @@ img.resetpass-img {
   .desktop-navbar > ul {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .desktop-navbar {
     justify-content: center;
+    margin-top: 1rem;
   }
 
   .section {
     padding-top: 20rem;
+  }
+
+  .footer-top {
+    justify-content: center;
+  }
+
+  footer ul {
+    align-items: center;
   }
 }
 
