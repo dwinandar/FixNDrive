@@ -1,3 +1,81 @@
+// NAVBAR COMPONENT
+const navbarNotLogin = document.getElementById("navbar-notlogin");
+const navbarLogin = document.getElementById("navbar-login");
+
+const path = window.location.pathname;
+navbarNotLogin
+  ? (navbarNotLogin.innerHTML = `<img src="assets/Logo.jpg" alt="logo-fixndrive" />
+<ul>
+  <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Home</a></li>
+  <li>
+    <div class="service-wrap">
+    <span class="dropbtn ${
+      path === "/carcare.html"
+        ? "active-nav"
+        : path === "/motorcare.html"
+        ? "active-nav"
+        : ""
+    }">Services</span>
+      <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+      <ul class="service-dropdown" id="service-dropdown">
+        <li><a href="/carcare.html">Car Care</a></li>
+        <li><a href="/motorcare.html">Motor Care</a></li>
+        <li><a href="#">Schedule</a></li>
+        <li><a href="#">Treatment Location</a></li>
+      </ul>
+    </div>
+  </li>
+  <li><a href="#">Forum</a></li>
+  <li><a href="#">Contact Us</a></li>
+</ul>
+<div class="btn-nav">
+  <a href="/login.html" class="login-btn-nav">Login</a>
+  <a href="/signup.html" class="signup-btn">Sign up</a>
+</div>`)
+  : navbarLogin
+  ? (navbarLogin.innerHTML = `<img src="assets/Logo.jpg" alt="logo-fixndrive" />
+  <ul>
+    <li><a href="/" class=${
+      path === "/homelogin.html" ? "active-nav" : ""
+    }>Home</a></li>
+    <li>
+      <div class="service-wrap">
+        <span class="dropbtn ${
+          path === "/carcare.html"
+            ? "active-nav"
+            : path === "/motorcare.html"
+            ? "active-nav"
+            : ""
+        }">Services</span>
+        <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+        <ul class="service-dropdown" id="service-dropdown">
+          <li><a href="/carcare.html">Car Care</a></li>
+          <li><a href="/motorcare.html">Motor Care</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Treatment Location</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="#">Forum</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="profile-nav">
+    <a href="/nonotif.html"
+      ><img src="assets/notif-icon.svg" alt="notif-icon"
+    /></a>
+    <div class="profile-wrap">
+      <img src="assets/profile-pic.png" alt="profile-pic" />
+      <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+  
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li>My Profile</li>
+        <li>Settings</li>
+        <li>Logout</li>
+      </ul>
+    </div>
+  </div>`)
+  : null;
+
 // PASSWORD TOGGLE SHOW/HIDE
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#password");
@@ -8,37 +86,32 @@ togglePassword?.addEventListener("click", () => {
   password.setAttribute("type", type);
 });
 
-// PROFILE DROPDOWN TOGGLE
+// DROPDOWN TOGGLE
 const profileElem = document.querySelector(".profile-wrap");
 const profileDropDown = document.getElementById("profile-dropdown");
-const serviceElem = document.querySelector(".service-wrap");
+const serviceElem = document.querySelector(".dropbtn");
 const serviceDropDown = document.getElementById("service-dropdown");
 
-profileElem?.addEventListener("click", (e) => {
-  e.stopPropagation();
+const dropDown = (elem, dropdown) => {
+  elem.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-  profileDropDown.classList.toggle("active");
-  if (profileDropDown.classList.contains("active")) {
-    document.body.onclick = () => {
-      profileDropDown.classList.remove("active");
-    };
-  } else {
-    document.body.onclick = null;
-  }
-});
-
-serviceElem?.addEventListener("click", (e) => {
-  e.stopPropagation();
-
-  serviceDropDown.classList.toggle("active");
-  if (serviceDropDown.classList.contains("active")) {
-    document.body.onclick = () => {
-      serviceDropDown.classList.remove("active");
-    };
-  } else {
-    document.body.onclick = null;
-  }
-});
+    dropdown.classList.toggle("active");
+    if (dropdown.classList.contains("active")) {
+      document.body.onclick = () => {
+        dropdown.classList.remove("active");
+      };
+    } else {
+      document.body.onclick = null;
+    }
+  });
+};
+if (navbarLogin) {
+  dropDown(profileElem, profileDropDown);
+  dropDown(serviceElem, serviceDropDown);
+} else if (navbarNotLogin) {
+  dropDown(serviceElem, serviceDropDown);
+}
 
 // CARD CARE ITEMS
 let motorcareItems = [
@@ -150,49 +223,49 @@ if (motorCardElem) {
 //   }
 // );
 
-/**
- * Moves the map to display over Berlin
- *
- * @param  {H.Map} map      A HERE Map instance within the application
- */
-function moveMapToBerlin(map) {
-  map.setCenter({ lat: 52.5159, lng: 13.3777 });
-  map.setZoom(14);
-}
+// /**
+//  * Moves the map to display over Berlin
+//  *
+//  * @param  {H.Map} map      A HERE Map instance within the application
+//  */
+// function moveMapToBerlin(map) {
+//   map.setCenter({ lat: 52.5159, lng: 13.3777 });
+//   map.setZoom(14);
+// }
 
-/**
- * Boilerplate map initialization code starts below:
- */
+// /**
+//  * Boilerplate map initialization code starts below:
+//  */
 
-//Step 1: initialize communication with the platform
-// In your own code, replace variable window.apikey with your own apikey
-var platform = new H.service.Platform({
-  apikey: "WxPAYsSMtx9FYOEZZ8-MUzIgzTh52hdbXbMkXmUglTo",
-});
-var defaultLayers = platform.createDefaultLayers();
+// //Step 1: initialize communication with the platform
+// // In your own code, replace variable window.apikey with your own apikey
+// var platform = new H.service.Platform({
+//   apikey: "WxPAYsSMtx9FYOEZZ8-MUzIgzTh52hdbXbMkXmUglTo",
+// });
+// var defaultLayers = platform.createDefaultLayers();
 
-//Step 2: initialize a map - this map is centered over Europe
-var map = new H.Map(
-  document.getElementById("map"),
-  defaultLayers.vector.normal.map,
-  {
-    center: { lat: 50, lng: 5 },
-    zoom: 4,
-    pixelRatio: window.devicePixelRatio || 1,
-  }
-);
-// add a resize listener to make sure that the map occupies the whole container
-window.addEventListener("resize", () => map.getViewPort().resize());
+// //Step 2: initialize a map - this map is centered over Europe
+// var map = new H.Map(
+//   document.getElementById("map"),
+//   defaultLayers.vector.normal.map,
+//   {
+//     center: { lat: 50, lng: 5 },
+//     zoom: 4,
+//     pixelRatio: window.devicePixelRatio || 1,
+//   }
+// );
+// // add a resize listener to make sure that the map occupies the whole container
+// window.addEventListener("resize", () => map.getViewPort().resize());
 
-//Step 3: make the map interactive
-// MapEvents enables the event system
-// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+// //Step 3: make the map interactive
+// // MapEvents enables the event system
+// // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+// var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
-// Create the default UI components
-var ui = H.ui.UI.createDefault(map, defaultLayers);
+// // Create the default UI components
+// var ui = H.ui.UI.createDefault(map, defaultLayers);
 
-// Now use the map as required...
-window.onload = function () {
-  moveMapToBerlin(map);
-};
+// // Now use the map as required...
+// window.onload = function () {
+//   moveMapToBerlin(map);
+// };
