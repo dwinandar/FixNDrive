@@ -27,7 +27,7 @@ navbarNotLogin
     </div>
   </li>
   <li><a href="/needlogin.html">Forum</a></li>
-  <li><a href="#">Contact Us</a></li>
+  <li><a href="/contact.html">Contact Us</a></li>
 </ul>
 <div class="btn-nav">
   <a href="/login.html" class="login-btn-nav">Login</a>
@@ -58,7 +58,7 @@ navbarNotLogin
       </div>
     </li>
     <li><a href="#">Forum</a></li>
-    <li><a href="#">Contact Us</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
   </ul>
   <div class="profile-nav">
     <a href="/nonotif.html"

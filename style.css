@@ -569,6 +569,59 @@ img.resetpass-img {
 
 /* END CARD & CARE PAGE */
 
+/* NOTIF PAGE */
+.notif {
+  align-items: center;
+  flex-direction: column;
+  padding: 10% 0;
+}
+
+.notif-heading {
+  color: var(--primary-main);
+  margin-bottom: 1rem;
+  margin-inline: 4rem;
+  font-size: 3rem;
+}
+
+.wrapper-notif {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #ddd;
+  margin-inline: 2rem;
+}
+
+.wrapper-notif img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.wrapper-notif :last-child i {
+  cursor: pointer;
+}
+
+.content-notif {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-block: 1rem;
+  padding-right: 2rem;
+}
+
+.content-notif :nth-child(2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.content-notif :nth-child(3) {
+  color: #717171;
+  font-size: 0.9rem;
+}
+/* END NOTIF PAGE */
+
 /* MAP */
 .map {
   justify-content: center;
