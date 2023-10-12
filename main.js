@@ -7,7 +7,7 @@ navbarNotLogin
   ? (navbarNotLogin.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
 
 <ul>
-  <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Home</a></li>
+  <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
   <li>
     <div class="service-wrap">
     <span class="dropbtn ${
@@ -16,20 +16,20 @@ navbarNotLogin
         : path === "/motorcare.html"
         ? "active-nav"
         : ""
-    }">Services</span>
+    }">Layanan</span>
       <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
       <ul class="service-dropdown" id="service-dropdown">
-        <li><a href="/carcare.html">Car Care</a></li>
-        <li><a href="/motorcare.html">Motor Care</a></li>
-        <li><a href="/needlogin.html">Schedule</a></li>
-        <li><a href="/needlogin.html">Treatment Location</a></li>
+        <li><a href="/carcare.html">Perawatan Mobil</a></li>
+        <li><a href="/motorcare.html">Perawatan Motor</a></li>
+        <li><a href="/needlogin.html">Jadwal</a></li>
+        <li><a href="/needlogin.html">Lokasi Perawatan</a></li>
       </ul>
     </div>
   </li>
   <li><a href="/needlogin.html">Forum</a></li>
   <li><a href="/contact.html" class=${
     path === "/contact.html" ? "active-nav" : ""
-  }>Contact Us</a></li>
+  }>Kontak Kami</a></li>
 </ul>
 <div class="btn-nav">
   <a href="/login.html" class="login-btn-nav">Login</a>
@@ -49,18 +49,18 @@ navbarNotLogin
             : path === "/motorcare.html"
             ? "active-nav"
             : ""
-        }">Services</span>
+        }">Layanan</span>
         <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
         <ul class="service-dropdown" id="service-dropdown">
-          <li><a href="/carcare.html">Car Care</a></li>
-          <li><a href="/motorcare.html">Motor Care</a></li>
-          <li><a href="#">Schedule</a></li>
-          <li><a href="#">Treatment Location</a></li>
+          <li><a href="/carcare.html">Perawatan Mobil</a></li>
+          <li><a href="/motorcare.html">Perawatan Motor</a></li>
+          <li><a href="#">Jadwal</a></li>
+          <li><a href="#">Lokasi Perawatan</a></li>
         </ul>
       </div>
     </li>
     <li><a href="#">Forum</a></li>
-    <li><a href="/contact.html">Contact Us</a></li>
+    <li><a href="/contact.html">Kontak Kami</a></li>
   </ul>
   <div class="profile-nav">
     <a href="/notif.html"
@@ -121,33 +121,32 @@ let motorcareItems = [
   {
     img: "assets/motorcare-img1.jpg",
     alt: "motorcare-img1",
-    title: "Essential products for washing motorcycles",
+    title: "Produk penting untuk mencuci sepeda motor",
   },
   {
     img: "assets/motorcare-img2.jpg",
     alt: "motorcare-img2",
-    title: "How to easily change oil independently",
+    title: "Cara mengganti oli dengan mudah secara mandiri",
   },
   {
     img: "assets/motorcare-img3.jpg",
     alt: "motorcare-img3",
-    title: "Amateur mistakes of new motorbike owners",
+    title: "Kesalahan amatir pemilik motor baru",
   },
   {
     img: "assets/motorcare-img4.jpg",
     alt: "motorcare-img4",
-    title: "The types of motorbikes you need to you need to know!",
+    title: "Jenis-jenis motor yang perlu anda ketahui!",
   },
   {
     img: "assets/motorcare-img5.jpg",
     alt: "motorcare-img5",
-    title: "How to easily wash your helmet at home!",
+    title: "Cara mencuci helm dengan mudah di rumah!",
   },
   {
     img: "assets/motorcare-img6.jpg",
     alt: "motorcare-img6",
-    title:
-      "The difference between filling tyres with nitrogen and regular tyre air",
+    title: "Perbedaan mengisi ban dengan nitrogen dan angin  biasa",
   },
 ];
 
@@ -217,19 +216,19 @@ footer
   <a href="#"><img src="assets/Logo-footer.svg" alt="footer-logo" /></a>
 </div>
 <ul>
-  <h3>See More Content</h3>
-  <h4>Resources</h4>
-  <li><a href="carcare.html">Car care</a></li>
-  <li><a href="/motorcare.html">Motor Care</a></li>
-  <h4>Community</h4>
+  <h3>Lihat konten lainnya</h3>
+  <h4>Layanan</h4>
+  <li><a href="carcare.html">Perawatan Mobil</a></li>
+  <li><a href="/motorcare.html">Perawatan Motor</a></li>
+  <h4>Komunitas</h4>
   <li><a href="/forum.html">Forum</a></li>
-  <h4>Find Us</h4>
-  <li><a href="/contact.html">Contact</a></li>
+  <h4>Temukan Kami</h4>
+  <li><a href="/contact.html">Kontak Kami</a></li>
 </ul>
 <div>
-  <h3>Join a Newsletter</h3>
+  <h3>Bergabung untuk langganan</h3>
   <form>
-    <label for="news">Your Email</label>
+    <label for="news">Email Kamu</label>
     <input
       type="email"
       class="subs-input"
