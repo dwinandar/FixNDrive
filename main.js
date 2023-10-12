@@ -27,7 +27,9 @@ navbarNotLogin
     </div>
   </li>
   <li><a href="/needlogin.html">Forum</a></li>
-  <li><a href="/contact.html">Contact Us</a></li>
+  <li><a href="/contact.html" class=${
+    path === "/contact.html" ? "active-nav" : ""
+  }>Contact Us</a></li>
 </ul>
 <div class="btn-nav">
   <a href="/login.html" class="login-btn-nav">Login</a>
@@ -52,8 +54,8 @@ navbarNotLogin
         <ul class="service-dropdown" id="service-dropdown">
           <li><a href="/carcare.html">Car Care</a></li>
           <li><a href="/motorcare.html">Motor Care</a></li>
-          <li><a href="#">Schedule</a></li>
-          <li><a href="#">Treatment Location</a></li>
+          <li><a href="/needlogin.html">Schedule</a></li>
+          <li><a href="/needlogin.html">Treatment Location</a></li>
         </ul>
       </div>
     </li>
@@ -61,7 +63,7 @@ navbarNotLogin
     <li><a href="/contact.html">Contact Us</a></li>
   </ul>
   <div class="profile-nav">
-    <a href="/nonotif.html"
+    <a href="/notif.html"
       ><img src="assets/notif-icon.svg" alt="notif-icon"
     /></a>
     <div class="profile-wrap">
@@ -70,8 +72,8 @@ navbarNotLogin
   
       <ul class="profile-dropdown" id="profile-dropdown">
         <li>My Profile</li>
-        <li>Settings</li>
-        <li>Logout</li>
+        <li><a href="/settings.html">Settings</a></li>
+        <li><a href="/">Logout</a></li>
       </ul>
     </div>
   </div>`)
@@ -215,7 +217,7 @@ footer
   <a href="#"><img src="assets/Logo-footer.svg" alt="footer-logo" /></a>
 </div>
 <ul>
-  <h3>See some our content</h3>
+  <h3>See More Content</h3>
   <h4>Resources</h4>
   <li><a href="carcare.html">Car care</a></li>
   <li><a href="/motorcare.html">Motor Care</a></li>

@@ -94,7 +94,7 @@ li {
 }
 
 .signup-btn:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--secondary-main);
   color: var(--neutral-10);
 }
 
@@ -704,8 +704,8 @@ footer ul {
   flex-direction: column;
 }
 
-footer ul h4 {
-  margin-top: 10px;
+footer ul h3 {
+  margin-bottom: 10px;
 }
 
 footer ul li {
