@@ -8,15 +8,11 @@ const setUserInLocalStorage = (user) => {
 
 let userJSON = localStorage.getItem("user");
 const user = JSON.parse(userJSON);
-console.log(user);
 
 const logout = () => {
   setUserInLocalStorage("notlogin");
   window.location.href("/");
 };
-
-// const navbarNotLogin = document.getElementById("navbar-notlogin");
-// const navbarLogin = document.getElementById("navbar-login");
 
 const navbar = document.getElementById("navbar");
 const path = window.location.pathname;
@@ -44,7 +40,9 @@ if (user == "login") {
       </div>
     </li>
     <li><a href="#">Forum</a></li>
-    <li><a href="/contact.html">Kontak Kami</a></li>
+    <li><a href="/contact.html" class=${
+      path === "/contact.html" ? "active-nav" : ""
+    }>Kontak</a></li>
   </ul>
   <div class="profile-nav">
     <a href="/notif.html"
@@ -55,7 +53,7 @@ if (user == "login") {
       <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
   
       <ul class="profile-dropdown" id="profile-dropdown">
-        <li>Profile Saya</li>
+        <li><a href="/profile.html">Profile Saya</a></li>
         <li><a href="/settings.html">Pengaturan</a></li>
         <li><a href="/" onclick="logout()">Keluar</a></li>
       </ul>
@@ -86,7 +84,7 @@ if (user == "login") {
       <li><a href="/needlogin.html">Forum</a></li>
       <li><a href="/contact.html" class=${
         path === "/contact.html" ? "active-nav" : ""
-      }>Kontak Kami</a></li>
+      }>Kontak</a></li>
     </ul>
     <div class="btn-nav">
       <a href="/login.html" class="login-btn-nav">Masuk</a>
@@ -106,7 +104,7 @@ togglePassword?.addEventListener("click", () => {
 // DROPDOWN TOGGLE
 const profileElem = document.querySelector(".profile-wrap");
 const profileDropDown = document.getElementById("profile-dropdown");
-const serviceElem = document.querySelector(".dropbtn");
+const serviceElem = document.querySelector(".service-wrap");
 const serviceDropDown = document.getElementById("service-dropdown");
 
 const dropDown = (elem, dropdown) => {

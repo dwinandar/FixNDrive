@@ -96,6 +96,7 @@ li {
 .signup-btn:hover {
   background-color: var(--secondary-main);
   color: var(--neutral-10);
+  border: 1px solid var(--secondary-main);
 }
 
 .active-nav {
@@ -186,8 +187,14 @@ li {
 }
 
 .profile-dropdown li {
-  padding: 10px;
+  width: 100%;
   border-radius: 5px;
+}
+
+.profile-dropdown li a {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
 }
 
 .profile-dropdown li:hover {
@@ -355,6 +362,8 @@ li {
   display: flex;
   gap: 0.8rem;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .car-btn,
@@ -406,6 +415,27 @@ input#terms-label {
   accent-color: var(--primary-main);
   width: 1rem;
   height: 1rem;
+}
+
+.radio-button input[type="radio"] {
+  display: none;
+}
+
+.radio-button label {
+  padding: 13px 26px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.radio-button label:hover {
+  background-color: #f0f0f0;
+}
+
+.radio-button input[type="radio"]:checked + label {
+  background-color: #4c4ddc;
+  color: white;
+  border: 1px solid #4c4ddc;
 }
 /* END SIGN UP PAGE */
 
@@ -735,8 +765,20 @@ footer ul li a:hover {
     gap: 1.5rem;
   }
 
-  .section {
+  .section.home,
+  .section.notif,
+  .section.no-notif,
+  .section.car-care,
+  .section.motor-care {
     padding-top: 15rem;
+  }
+
+  .login-banner {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
   }
 
   .desktop-navbar {
@@ -762,8 +804,20 @@ footer ul li a:hover {
     margin-top: 1rem;
   }
 
-  .section {
+  .section.home,
+  .section.notif,
+  .section.no-notif,
+  .section.car-care,
+  .section.motor-care {
     padding-top: 20rem;
+  }
+
+  .login-banner {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
   }
 
   .footer-top {
