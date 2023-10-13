@@ -1,46 +1,30 @@
+const d = new Date();
+let year = d.getFullYear();
 // NAVBAR COMPONENT
-const navbarNotLogin = document.getElementById("navbar-notlogin");
-const navbarLogin = document.getElementById("navbar-login");
 
+const setUserInLocalStorage = (user) => {
+  localStorage.setItem("user", JSON.stringify(user));
+};
+
+let userJSON = localStorage.getItem("user");
+const user = JSON.parse(userJSON);
+console.log(user);
+
+const logout = () => {
+  setUserInLocalStorage("notlogin");
+  window.location.href("/");
+};
+
+// const navbarNotLogin = document.getElementById("navbar-notlogin");
+// const navbarLogin = document.getElementById("navbar-login");
+
+const navbar = document.getElementById("navbar");
 const path = window.location.pathname;
-navbarNotLogin
-  ? (navbarNotLogin.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
 
-<ul>
-  <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
-  <li>
-    <div class="service-wrap">
-    <span class="dropbtn ${
-      path === "/carcare.html"
-        ? "active-nav"
-        : path === "/motorcare.html"
-        ? "active-nav"
-        : ""
-    }">Layanan</span>
-      <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
-      <ul class="service-dropdown" id="service-dropdown">
-        <li><a href="/carcare.html">Perawatan Mobil</a></li>
-        <li><a href="/motorcare.html">Perawatan Motor</a></li>
-        <li><a href="/needlogin.html">Jadwal</a></li>
-        <li><a href="/needlogin.html">Lokasi Perawatan</a></li>
-      </ul>
-    </div>
-  </li>
-  <li><a href="/needlogin.html">Forum</a></li>
-  <li><a href="/contact.html" class=${
-    path === "/contact.html" ? "active-nav" : ""
-  }>Kontak Kami</a></li>
-</ul>
-<div class="btn-nav">
-  <a href="/login.html" class="login-btn-nav">Login</a>
-  <a href="/signup.html" class="signup-btn">Sign up</a>
-</div>`)
-  : navbarLogin
-  ? (navbarLogin.innerHTML = `<a href="/homelogin.html"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+if (user == "login") {
+  navbar.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
   <ul>
-    <li><a href="/" class=${
-      path === "/homelogin.html" ? "active-nav" : ""
-    }>Home</a></li>
+    <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
     <li>
       <div class="service-wrap">
         <span class="dropbtn ${
@@ -71,14 +55,44 @@ navbarNotLogin
       <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
   
       <ul class="profile-dropdown" id="profile-dropdown">
-        <li>My Profile</li>
-        <li><a href="/settings.html">Settings</a></li>
-        <li><a href="/">Logout</a></li>
+        <li>Profile Saya</li>
+        <li><a href="/settings.html">Pengaturan</a></li>
+        <li><a href="/" onclick="logout()">Keluar</a></li>
       </ul>
     </div>
-  </div>`)
-  : null;
-
+  </div>`;
+} else if (user == null || "notlogin") {
+  navbar.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+    <ul>
+      <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
+      <li>
+        <div class="service-wrap">
+        <span class="dropbtn ${
+          path === "/carcare.html"
+            ? "active-nav"
+            : path === "/motorcare.html"
+            ? "active-nav"
+            : ""
+        }">Layanan</span>
+          <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+          <ul class="service-dropdown" id="service-dropdown">
+            <li><a href="/carcare.html">Perawatan Mobil</a></li>
+            <li><a href="/motorcare.html">Perawatan Motor</a></li>
+            <li><a href="/needlogin.html">Jadwal</a></li>
+            <li><a href="/needlogin.html">Lokasi Perawatan</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="/needlogin.html">Forum</a></li>
+      <li><a href="/contact.html" class=${
+        path === "/contact.html" ? "active-nav" : ""
+      }>Kontak Kami</a></li>
+    </ul>
+    <div class="btn-nav">
+      <a href="/login.html" class="login-btn-nav">Masuk</a>
+      <a href="/signup.html" class="signup-btn">Daftar</a>
+    </div>`;
+}
 // PASSWORD TOGGLE SHOW/HIDE
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#password");
@@ -96,25 +110,23 @@ const serviceElem = document.querySelector(".dropbtn");
 const serviceDropDown = document.getElementById("service-dropdown");
 
 const dropDown = (elem, dropdown) => {
-  elem.addEventListener("click", (e) => {
-    e.stopPropagation();
+  if (elem) {
+    elem.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    dropdown.classList.toggle("active");
-    if (dropdown.classList.contains("active")) {
-      document.body.onclick = () => {
-        dropdown.classList.remove("active");
-      };
-    } else {
-      document.body.onclick = null;
-    }
-  });
+      dropdown.classList.toggle("active");
+      if (dropdown.classList.contains("active")) {
+        document.body.onclick = () => {
+          dropdown.classList.remove("active");
+        };
+      } else {
+        document.body.onclick = null;
+      }
+    });
+  }
 };
-if (navbarLogin) {
-  dropDown(profileElem, profileDropDown);
-  dropDown(serviceElem, serviceDropDown);
-} else if (navbarNotLogin) {
-  dropDown(serviceElem, serviceDropDown);
-}
+dropDown(profileElem, profileDropDown);
+dropDown(serviceElem, serviceDropDown);
 
 // CARD CARE ITEMS
 let motorcareItems = [
@@ -154,32 +166,32 @@ let carcareItems = [
   {
     img: "assets/carcare-img1.jpg",
     alt: "carcare-img1",
-    title: "Essential products for car washing",
+    title: "Produk penting untuk mencuci mobil",
   },
   {
     img: "assets/carcare-img2.jpg",
     alt: "carcare-img2",
-    title: "How to fill car wiper water correctly",
+    title: "Cara mengisi air wiper mobil dengan benar",
   },
   {
     img: "assets/carcare-img3.jpg",
     alt: "carcare-img3",
-    title: "When should car tyres be replaced?",
+    title: "Kapan ban mobil harus diganti?",
   },
   {
     img: "assets/carcare-img4.jpg",
     alt: "carcare-img4",
-    title: "Get to know the indicator lights on your car panel!",
+    title: "Kenali lampu indikator pada panel mobil Anda!",
   },
   {
     img: "assets/carcare-img5.jpg",
     alt: "carcare-img5",
-    title: "Matic vs Manual, Which one is good?",
+    title: "Matic vs Manual, Mana yang bagus?",
   },
   {
     img: "assets/carcare-img6.jpg",
     alt: "carcare-img6",
-    title: "Difference between dry battery and wet battery",
+    title: "Perbedaan antara aki kering dan aki basah",
   },
 ];
 
@@ -234,19 +246,19 @@ footer
       class="subs-input"
       name="news"
       id="news"
-      placeholder="Enter Your Email"
+      placeholder="masukkan email kamu"
     />
-    <button class="subs-btn">Subscribe</button>
+    <button class="subs-btn">Berlangganan</button>
   </form>
 </div>
 </div>
 <div class="footer-bot">
 <div>
-  <p>Copyright &copy; 2023 FixNDrive. All Rights Reserved.</p>
+  <p>Copyright &copy; ${year} FixNDrive. Hak Cipta Dilindungi.</p>
 </div>
 <div>
-  <p>Terms of Service</p>
-  <p>Privacy Policy</p>
+  <p>Syarat & Ketentuan</p>
+  <p>Kebijakan Privasi</p>
 </div>
 </div>`)
   : null;

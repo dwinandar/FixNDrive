@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="sign up page for FixNDrive website" />
-    <title>FixNDrive | Sign up</title>
+    <title>FixNDrive | Daftar</title>
     <link rel="icon" type="image/svg+xml" href="assets/fnd-icon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,17 +12,17 @@
     <main class="section sign-up">
       <form class="form" action="/signupsuccess.html">
         <div>
-          <h1 class="login-heading">Welcome</h1>
-          <p>Enter your Credentials to access your account</p>
+          <h1 class="login-heading">Selamat Datang</h1>
+          <p>Masukkan Kredensial Anda untuk mengakses akun Anda</p>
         </div>
-        <h6 class="heading-input">Personal Information</h6>
+        <h6 class="heading-input">Informasi Pribadi</h6>
         <div class="input">
-          <div><label for="email">Name</label></div>
+          <div><label for="email">Nama</label></div>
           <input
             type="name"
             id="name"
             name="name"
-            placeholder="enter your name"
+            placeholder="masukkan nama kamu"
             required
             autofocus
             class="form-control"
@@ -34,7 +34,7 @@
             type="email"
             id="email"
             name="email"
-            placeholder="enter your email"
+            placeholder="masukkan email kamu"
             required
             autofocus
             class="form-control"
@@ -42,12 +42,12 @@
         </div>
 
         <div class="input">
-          <div><label for="phone">Phone</label></div>
+          <div><label for="phone">Nomor HP</label></div>
           <input
             type="text"
             id="number"
             name="number"
-            placeholder="enter your phone number"
+            placeholder="masukkan nomor hp kamu"
             required
             autofocus
             class="form-control"
@@ -60,7 +60,7 @@
             type="password"
             id="password"
             name="password"
-            placeholder="enter your password"
+            placeholder="masukkan password kamu"
             required
             class="form-control"
           /><img
@@ -71,18 +71,18 @@
           />
         </div>
 
-        <h6 class="heading-input">Vehicle Details</h6>
+        <h6 class="heading-input">Detail Kendaraan</h6>
         <div class="input">
           <div class="wrap-btn">
             <button type="button" class="motor-btn">Motor</button>
-            <button type="button" class="car-btn">Car</button>
+            <button type="button" class="car-btn">Mobil</button>
           </div>
-          <div><label for="vehicle-make">Vehicle Make</label></div>
+          <div><label for="vehicle-make">Merek Kendaraan</label></div>
           <input
             type="text"
             id="vehicle-make"
             name="vehicle-make"
-            placeholder="enter your vehicle make"
+            placeholder="masukkan merek kendaraan kamu"
             required
             autofocus
             class="form-control"
@@ -90,12 +90,12 @@
         </div>
 
         <div class="input">
-          <div><label for="vehicle-model">Vehicle Model</label></div>
+          <div><label for="vehicle-model">Model Kendaraan</label></div>
           <input
             type="text"
             id="vehicle-model"
             name="vehicle-model"
-            placeholder="enter your vehicle model"
+            placeholder="masukkan model kendaraan kamu"
             required
             class="form-control"
           />
@@ -103,14 +103,14 @@
 
         <div class="termspolicy">
           <input type="checkbox" name="termsandcondition" id="terms-label" />
-          <label for="terms-label">I agree to the terms & policy</label>
+          <label for="terms-label"
+            >Saya menyetujui persyaratan & kebijakan</label
+          >
         </div>
 
         <div class="btn-wrap-signup">
-          <button type="reset" class="btn-border-gray">
-            <a href="/">Cancel</a>
-          </button>
-          <a href="/signupsuccess.html">Sign up</a>
+          <a href="javascript:history.back()" class="btn-border-gray">Batal</a>
+          <a href="/signupsuccess.html">Daftar</a>
         </div>
       </form>
       <img
