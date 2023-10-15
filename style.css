@@ -654,12 +654,46 @@ img.resetpass-img {
 }
 /* END NOTIF PAGE */
 
-/* MAP */
-.map {
-  justify-content: center;
+/* SCHEDULE PAGE */
+.jadwal {
   align-items: center;
+  flex-direction: column;
+  padding: 10% 0;
 }
-/* END MAP */
+
+.heading-jadwal {
+  font-size: 3.5rem;
+  color: var(--primary-main);
+}
+
+.sub-heading-jadwal {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.wrap-card-jadwal {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 780px;
+}
+
+.card-jadwal {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card-body-jadwal {
+  padding: 0.5rem;
+}
+
+.card-body-jadwal :first-child {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+/* SCHEDULE PAGE */
 
 /* FOOTER */
 footer p,
@@ -769,8 +803,13 @@ footer ul li a:hover {
   .section.notif,
   .section.no-notif,
   .section.car-care,
-  .section.motor-care {
+  .section.motor-care,
+  .section.jadwal {
     padding-top: 15rem;
+  }
+
+  .sub-heading-jadwal {
+    text-align: center;
   }
 
   .login-banner {
@@ -808,7 +847,8 @@ footer ul li a:hover {
   .section.notif,
   .section.no-notif,
   .section.car-care,
-  .section.motor-care {
+  .section.motor-care,
+  .section.jadwal {
     padding-top: 20rem;
   }
 

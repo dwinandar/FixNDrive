@@ -1,7 +1,7 @@
 const d = new Date();
 let year = d.getFullYear();
-// NAVBAR COMPONENT
 
+// MOCK LOGIN
 const setUserInLocalStorage = (user) => {
   localStorage.setItem("user", JSON.stringify(user));
 };
@@ -11,8 +11,9 @@ const user = JSON.parse(userJSON);
 
 const logout = () => {
   setUserInLocalStorage("notlogin");
-  window.location.href("/");
 };
+
+// NAVBAR COMPONENT
 
 const navbar = document.getElementById("navbar");
 const path = window.location.pathname;
@@ -28,13 +29,15 @@ if (user == "login") {
             ? "active-nav"
             : path === "/motorcare.html"
             ? "active-nav"
+            : path === "/schedule.html"
+            ? "active-nav"
             : ""
         }">Layanan</span>
         <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
         <ul class="service-dropdown" id="service-dropdown">
           <li><a href="/carcare.html">Perawatan Mobil</a></li>
           <li><a href="/motorcare.html">Perawatan Motor</a></li>
-          <li><a href="#">Jadwal</a></li>
+          <li><a href="/schedule.html">Jadwal</a></li>
           <li><a href="#">Lokasi Perawatan</a></li>
         </ul>
       </div>
@@ -60,7 +63,8 @@ if (user == "login") {
     </div>
   </div>`;
 } else if (user == null || "notlogin") {
-  navbar.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+  if (navbar) {
+    navbar.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
     <ul>
       <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
       <li>
@@ -90,6 +94,7 @@ if (user == "login") {
       <a href="/login.html" class="login-btn-nav">Masuk</a>
       <a href="/signup.html" class="signup-btn">Daftar</a>
     </div>`;
+  }
 }
 // PASSWORD TOGGLE SHOW/HIDE
 const togglePassword = document.querySelector("#togglePassword");
