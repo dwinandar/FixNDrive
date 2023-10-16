@@ -42,7 +42,9 @@ if (user == "login") {
         </ul>
       </div>
     </li>
-    <li><a href="#">Forum</a></li>
+    <li><a href="/forum.html" class=${
+      path === "/forum.html" ? "active-nav" : ""
+    }>Forum</a></li>
     <li><a href="/contact.html" class=${
       path === "/contact.html" ? "active-nav" : ""
     }>Kontak</a></li>
