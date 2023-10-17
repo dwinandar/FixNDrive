@@ -5,18 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Home page for FixNDrive website" />
 
-    <title>FixNDrive</title>
+    <title>FixNDrive | Home</title>
     <link rel="icon" type="image/svg+xml" href="assets/fnd-icon.svg" />
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
     <nav class="desktop-navbar" id="navbar"></nav>
     <main class="section home">
-      <img src="assets/home-banner.jpg" alt="home-banner" class="home-banner" />
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-slide">
+            <div>
+              <h1>Tentang Kami</h1>
+              <p>
+                Selamat datang di FixNDrive, tempatnya panduan perawatan
+                kendaraan terpercaya untuk pemilik kendaraan di Indonesia. Kami
+                adalah tim yang bersemangat tentang menjaga kendaraan Anda
+                berjalan dengan baik dan aman melalui pengalaman online yang
+                sederhana, informatif, dan mudah dimengerti.
+              </p>
+            </div>
+            <img src="assets/carcare-img1.jpg" alt="Image 1" />
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/carcare-img2.jpg" alt="Image 2" />
+            <div>
+              <h1>Visi</h1>
+              <p>
+                Visi kami adalah untuk menjadi sumber utama dan terpercaya bagi
+                pemilik kendaraan di Indonesia dalam merawat kendaraan mereka.
+                Kami berkomitmen untuk menyediakan panduan perawatan kendaraan
+                yang informatif, mudah dimengerti, dan aksesibel melalui
+                platform online kami.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div>
+              <h1>Misi</h1>
+              <ul class="custom-marker">
+                <li>Memberikan Panduan Terbaik</li>
+                <li>Kemitraan dengan Bengkel Terbaik</li>
+                <li>Jadwal Perawatan yang Tepat Waktu</li>
+                <li>Akses Mudah, di Mana Saja</li>
+                <li>Komunitas Pemilik Kendaraan</li>
+                <li>Inovasi Berkelanjutan</li>
+              </ul>
+            </div>
+            <img src="assets/carcare-img3.jpg" alt="Image 2" />
+          </div>
+        </div>
+        <button class="carousel-prev" onclick="prevSlide()">
+          <img src="assets/arrow-left-s-line.svg" width="30" />
+        </button>
+        <button class="carousel-next" onclick="nextSlide()">
+          <img src="assets/arrow-right-s-line.svg" width="30" />
+        </button>
+      </div>
+
       <h2 class="home-heading">Tips Perawatan Kendaraan</h2>
       <div class="home-card-wrap">
         <div class="home-card">

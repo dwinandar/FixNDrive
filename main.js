@@ -18,8 +18,23 @@ const logout = () => {
 const navbar = document.getElementById("navbar");
 const path = window.location.pathname;
 
-if (user == "login") {
-  navbar.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 50) {
+    navbar.style.marginTop = "0";
+    navbar.style.width = "100%";
+  } else {
+    navbar.style.marginTop = "1.5rem";
+    navbar.style.width = "calc(100% - 10%)";
+  }
+});
+
+if (user === "login") {
+  navbar.innerHTML = `<div class="logo-burger">
+  <a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+  <div>
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+</div>
   <ul>
     <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
     <li>
@@ -64,9 +79,14 @@ if (user == "login") {
       </ul>
     </div>
   </div>`;
-} else if (user == null || "notlogin") {
+} else if (user === null || "notlogin") {
   if (navbar) {
-    navbar.innerHTML = `<a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+    navbar.innerHTML = `<div class="logo-burger">
+      <a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+      <div>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+    </div>
     <ul>
       <li><a href="/" class=${path === "/" ? "active-nav" : ""}>Beranda</a></li>
       <li>
@@ -98,6 +118,23 @@ if (user == "login") {
     </div>`;
   }
 }
+
+const hamburger = document.querySelector(".fa");
+
+hamburger.addEventListener("click", () => {
+  const navList = document.querySelector(".desktop-navbar > ul");
+  const btnNav = document.querySelector(".btn-nav");
+  const profileNav = document.querySelector(".profile-nav");
+  navList.classList.toggle("active");
+  if (user === "login") {
+    profileNav.classList.toggle("active");
+  } else if (user === null || "notlogin") {
+    btnNav.classList.toggle("active");
+  }
+
+  hamburger.classList.toggle("fa-times");
+});
+
 // PASSWORD TOGGLE SHOW/HIDE
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#password");
@@ -268,67 +305,33 @@ footer
 </div>`)
   : null;
 
-// HERE API
-// var platform = new H.service.Platform({
-//   apikey: "WxPAYsSMtx9FYOEZZ8-MUzIgzTh52hdbXbMkXmUglTo",
-// });
+// CAROUSEL SLIDER
+let slideIndex = 0;
 
-// // Obtain the default map types from the platform object:
-// var defaultLayers = platform.createDefaultLayers();
+function showSlides() {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const wrapper = document.querySelector(".carousel-wrapper");
 
-// // Instantiate (and display) a map object:
-// var map = new H.Map(
-//   document.getElementById("mapContainer"),
-//   defaultLayers.vector.normal.map,
-//   {
-//     zoom: 10,
-//     center: { lat: -6.386694690076874, lng: 106.83932508526033 },
-//   }
-// );
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  } else if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  }
 
-// /**
-//  * Moves the map to display over Berlin
-//  *
-//  * @param  {H.Map} map      A HERE Map instance within the application
-//  */
-// function moveMapToBerlin(map) {
-//   map.setCenter({ lat: 52.5159, lng: 13.3777 });
-//   map.setZoom(14);
-// }
+  const translateValue = slideIndex * -100;
+  wrapper.style.transform = `translateX(${translateValue}%)`;
+}
 
-// /**
-//  * Boilerplate map initialization code starts below:
-//  */
+function nextSlide() {
+  slideIndex++;
+  showSlides();
+}
 
-// //Step 1: initialize communication with the platform
-// // In your own code, replace variable window.apikey with your own apikey
-// var platform = new H.service.Platform({
-//   apikey: "WxPAYsSMtx9FYOEZZ8-MUzIgzTh52hdbXbMkXmUglTo",
-// });
-// var defaultLayers = platform.createDefaultLayers();
+function prevSlide() {
+  slideIndex--;
+  showSlides();
+}
 
-// //Step 2: initialize a map - this map is centered over Europe
-// var map = new H.Map(
-//   document.getElementById("map"),
-//   defaultLayers.vector.normal.map,
-//   {
-//     center: { lat: 50, lng: 5 },
-//     zoom: 4,
-//     pixelRatio: window.devicePixelRatio || 1,
-//   }
-// );
-// // add a resize listener to make sure that the map occupies the whole container
-// window.addEventListener("resize", () => map.getViewPort().resize());
+const intervalCarousel = setInterval(nextSlide, 4000);
 
-// //Step 3: make the map interactive
-// // MapEvents enables the event system
-// // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-// var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-// // Create the default UI components
-// var ui = H.ui.UI.createDefault(map, defaultLayers);
-
-// // Now use the map as required...
-// window.onload = function () {
-//   moveMapToBerlin(map);
-// };
+showSlides();
