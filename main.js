@@ -241,6 +241,7 @@ let carcareItems = [
     alt: "carcare-img1",
     title: "Produk penting untuk mencuci mobil",
     date: "15 Oktober 2023",
+    more: "/artikel/mobil",
   },
   {
     id: 2,
@@ -248,6 +249,7 @@ let carcareItems = [
     alt: "carcare-img2",
     title: "Cara mengisi air wiper mobil dengan benar",
     date: "16 Oktober 2023",
+    more: "/artikel/mobil",
   },
   {
     id: 3,
@@ -255,6 +257,7 @@ let carcareItems = [
     alt: "carcare-img3",
     title: "Kapan sebaiknya ban mobil diganti?",
     date: "17 Oktober 2023",
+    more: "/artikel/mobil",
   },
   {
     id: 4,
@@ -262,6 +265,7 @@ let carcareItems = [
     alt: "carcare-img4",
     title: "Kenali lampu indikator pada panel mobil Anda!",
     date: "18 Oktober 2023",
+    more: "/artikel/mobil",
   },
   {
     id: 5,
@@ -269,6 +273,7 @@ let carcareItems = [
     alt: "carcare-img5",
     title: "Matic vs Manual, Mana yang bagus?",
     date: "19 Oktober 2023",
+    more: "/artikel/mobil",
   },
   {
     id: 6,
@@ -276,6 +281,7 @@ let carcareItems = [
     alt: "carcare-img6",
     title: "Perbedaan antara aki kering dan aki basah",
     date: "19 Oktober 2023",
+    more: "/artikel/mobil",
   },
 ];
 
@@ -376,6 +382,6 @@ function prevSlide() {
   showSlides();
 }
 
-// const intervalCarousel = setInterval(nextSlide, 4000);
+const intervalCarousel = setInterval(nextSlide, 4000);
 
 showSlides();

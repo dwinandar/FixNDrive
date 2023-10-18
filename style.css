@@ -224,7 +224,6 @@ li {
 .carousel-wrapper {
   display: flex;
   transition: transform 0.3s ease-in-out;
-  flex-wrap: wrap;
 }
 
 .carousel-slide {
@@ -593,6 +592,7 @@ input#terms-label {
   justify-content: center;
   flex-direction: column;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .need-login-wrap {
