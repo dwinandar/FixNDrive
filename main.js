@@ -30,7 +30,9 @@ window.addEventListener("scroll", function () {
 
 if (user === "login") {
   navbar.innerHTML = `<div class="logo-burger">
-  <a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+  <a href="/"><img src="${
+    window.origin
+  }/assets/Logo.svg" alt="logo-fixndrive" /></a>
   <div>
     <i class="fa fa-bars" aria-hidden="true"></i>
   </div>
@@ -48,7 +50,9 @@ if (user === "login") {
             ? "active-nav"
             : ""
         }">Layanan</span>
-        <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+        <img src="${
+          window.origin
+        }/assets/arrow-down.svg" alt="arrow-down-icon" />
         <ul class="service-dropdown" id="service-dropdown">
           <li><a href="/carcare.html">Perawatan Mobil</a></li>
           <li><a href="/motorcare.html">Perawatan Motor</a></li>
@@ -66,11 +70,15 @@ if (user === "login") {
   </ul>
   <div class="profile-nav">
     <a href="/notif.html"
-      ><img src="assets/notif-icon.svg" alt="notif-icon"
+      ><img src="${
+        window.origin
+      }/assets/notif-icon.svg" alt="notif-icon" class=${
+    path === "/notif.html" ? "active-nav" : ""
+  }
     /></a>
     <div class="profile-wrap">
-      <img src="assets/profile-pic.png" alt="profile-pic" />
-      <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+      <img src="${window.origin}/assets/profile-pic.png" alt="profile-pic" />
+      <img src="${window.origin}/assets/arrow-down.svg" alt="arrow-down-icon" />
   
       <ul class="profile-dropdown" id="profile-dropdown">
         <li><a href="/profile.html">Profile Saya</a></li>
@@ -82,7 +90,9 @@ if (user === "login") {
 } else if (user === null || "notlogin") {
   if (navbar) {
     navbar.innerHTML = `<div class="logo-burger">
-      <a href="/"><img src="assets/Logo.svg" alt="logo-fixndrive" /></a>
+      <a href="/"><img src="${
+        window.origin
+      }/assets/Logo.svg" alt="logo-fixndrive" /></a>
       <div>
         <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
@@ -98,7 +108,9 @@ if (user === "login") {
             ? "active-nav"
             : ""
         }">Layanan</span>
-          <img src="assets/arrow-down.svg" alt="arrow-down-icon" />
+          <img src="${
+            window.origin
+          }/assets/arrow-down.svg" alt="arrow-down-icon" />
           <ul class="service-dropdown" id="service-dropdown">
             <li><a href="/carcare.html">Perawatan Mobil</a></li>
             <li><a href="/motorcare.html">Perawatan Motor</a></li>
@@ -173,67 +185,97 @@ dropDown(serviceElem, serviceDropDown);
 // CARD CARE ITEMS
 let motorcareItems = [
   {
-    img: "assets/motorcare-img1.jpg",
+    id: 1,
+    img: `${window.origin}/assets/motorcare-img1.jpg`,
     alt: "motorcare-img1",
     title: "Produk penting untuk mencuci sepeda motor",
+    date: "15 Oktober 2023",
+    more: "artikel/motor",
   },
   {
-    img: "assets/motorcare-img2.jpg",
+    id: 2,
+    img: `${window.origin}/assets/motorcare-img2.jpg`,
     alt: "motorcare-img2",
     title: "Cara mengganti oli dengan mudah secara mandiri",
+    date: "16 Oktober 2023",
+    more: "/artikel/motor",
   },
   {
-    img: "assets/motorcare-img3.jpg",
+    id: 3,
+    img: `${window.origin}/assets/motorcare-img3.jpg`,
     alt: "motorcare-img3",
     title: "Kesalahan amatir pemilik motor baru",
+    date: "17 Oktober 2023",
+    more: "/artikel/motor",
   },
   {
-    img: "assets/motorcare-img4.jpg",
+    id: 4,
+    img: `${window.origin}/assets/motorcare-img4.jpg`,
     alt: "motorcare-img4",
     title: "Jenis-jenis motor yang perlu anda ketahui!",
+    date: "18 Oktober 2023",
+    more: "/artikel/motor",
   },
   {
-    img: "assets/motorcare-img5.jpg",
+    id: 5,
+    img: `${window.origin}/assets/motorcare-img5.jpg`,
     alt: "motorcare-img5",
     title: "Cara mencuci helm dengan mudah di rumah!",
+    date: "19 Oktober 2023",
+    more: "/artikel/motor",
   },
   {
-    img: "assets/motorcare-img6.jpg",
+    id: 6,
+    img: `${window.origin}/assets/motorcare-img6.jpg`,
     alt: "motorcare-img6",
     title: "Perbedaan mengisi ban dengan nitrogen dan angin  biasa",
+    date: "19 Oktober 2023",
+    more: "/artikel/motor",
   },
 ];
 
 let carcareItems = [
   {
-    img: "assets/carcare-img1.jpg",
+    id: 1,
+    img: `${window.origin}/assets/carcare-img1.jpg`,
     alt: "carcare-img1",
     title: "Produk penting untuk mencuci mobil",
+    date: "15 Oktober 2023",
   },
   {
-    img: "assets/carcare-img2.jpg",
+    id: 2,
+    img: `${window.origin}/assets/carcare-img2.jpg`,
     alt: "carcare-img2",
     title: "Cara mengisi air wiper mobil dengan benar",
+    date: "16 Oktober 2023",
   },
   {
-    img: "assets/carcare-img3.jpg",
+    id: 3,
+    img: `${window.origin}/assets/carcare-img3.jpg`,
     alt: "carcare-img3",
-    title: "Kapan ban mobil harus diganti?",
+    title: "Kapan sebaiknya ban mobil diganti?",
+    date: "17 Oktober 2023",
   },
   {
-    img: "assets/carcare-img4.jpg",
+    id: 4,
+    img: `${window.origin}/assets/carcare-img4.jpg`,
     alt: "carcare-img4",
     title: "Kenali lampu indikator pada panel mobil Anda!",
+    date: "18 Oktober 2023",
   },
   {
-    img: "assets/carcare-img5.jpg",
+    id: 5,
+    img: `${window.origin}/assets/carcare-img5.jpg`,
     alt: "carcare-img5",
     title: "Matic vs Manual, Mana yang bagus?",
+    date: "19 Oktober 2023",
   },
   {
-    img: "assets/carcare-img6.jpg",
+    id: 6,
+    img: `${window.origin}/assets/carcare-img6.jpg`,
     alt: "carcare-img6",
     title: "Perbedaan antara aki kering dan aki basah",
+    date: "19 Oktober 2023",
   },
 ];
 
@@ -248,7 +290,9 @@ const reusableCardCare = (itemsArray, cardElem) => {
       class="card-img"
     />
     <div class="card-item">
+    <h5><img src="${window.origin}/assets/clipboard-list.svg" alt="clipboard-list-icon">${item.date}</h5>
       <h3>${item.title}</h3>
+      <a class="card-btn" href=${item.more}/${item.id}.html>Selengkapnya</a>
     </div>
   </div>`;
   }
@@ -267,7 +311,7 @@ const footer = document.getElementById("footer");
 footer
   ? (footer.innerHTML = `<div class="footer-top">
 <div>
-  <a href="#"><img src="assets/Logo-footer.svg" alt="footer-logo" /></a>
+  <a href="#"><img src="${window.origin}/assets/Logo-footer.svg" alt="footer-logo" /></a>
 </div>
 <ul>
   <h3>Lihat konten lainnya</h3>

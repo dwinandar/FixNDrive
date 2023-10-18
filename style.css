@@ -110,7 +110,11 @@ li {
 .profile-nav {
   align-items: center;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.profile-nav img {
+  padding: 0.5rem;
 }
 
 .profile-nav :nth-child(2) {
@@ -694,10 +698,55 @@ img.resetpass-img {
   width: 100%;
 }
 
-.card-item {
-  padding-block: 0.5rem;
+.card {
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 6px 0px rgba(0, 0, 0, 0.02);
+}
+
+.card-item img {
+  width: 15px;
+}
+
+.card-item h5 {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.card-item h3 {
+  font-size: 1.5rem;
+}
+
+.card-btn {
+  padding: 0.375rem 1rem;
+  width: fit-content;
+  align-self: flex-end;
+  color: var(--primary-main);
+  font-size: 1.25rem;
+  border: 1px solid var(--primary-main);
+  border-radius: 6px;
+  transition: all 0.1s;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.card-btn:hover {
+  color: var(--neutral-10);
+  background-color: var(--primary-hover);
+}
+
+.card-btn:active {
+  background-color: var(--primary-pressed);
+}
+
+.card-item {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f8f6f6;
+  border: 1px solid var(--neutral-40);
 }
 
 /* END CARD & CARE PAGE */
@@ -1068,18 +1117,6 @@ footer ul li a:hover {
 
 /* MEDIA SCREEN */
 
-@media only screen and (max-width: 1400px) {
-  .section.home,
-  .section.notif,
-  .section.no-notif,
-  .section.car-care,
-  .section.motor-care,
-  .section.jadwal,
-  .section.forum {
-    padding-top: 10rem;
-  }
-}
-
 @media only screen and (min-width: 899px) {
   .logo-burger :nth-child(2) {
     display: none;
@@ -1091,6 +1128,12 @@ footer ul li a:hover {
     grid-template-columns: 1fr;
   }
 
+  .motor-care,
+  .car-care {
+    padding-inline: 2rem;
+    padding-block: 10rem;
+  }
+
   .desktop-navbar {
     gap: 1.5rem;
     flex-direction: column;
@@ -1098,6 +1141,7 @@ footer ul li a:hover {
 
   .fa {
     padding: 0.5rem;
+    transition: all 0.3s;
   }
 
   .btn-nav,
@@ -1163,12 +1207,6 @@ footer ul li a:hover {
 }
 
 @media only screen and (max-width: 480px) {
-  .motor-care,
-  .car-care {
-    padding-inline: 2rem;
-    padding-block: 12rem;
-  }
-
   .desktop-navbar > ul {
     flex-direction: column;
     align-items: center;
