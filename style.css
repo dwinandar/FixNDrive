@@ -316,24 +316,98 @@ li {
 /* END HOME CAROUSEL */
 
 /* HOME PAGE */
-.home {
+.section.home {
+  width: 90%;
+  max-width: 90vw;
+  padding-top: 10rem;
+  margin-inline: auto;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12% 0 5% 0;
-  gap: 1.5rem;
 }
 
-.home-heading {
-  text-align: center;
+.home-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 3px solid #e3e8ee;
+}
+
+.home-bottom {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.home-bottom > div {
+  width: 28.125rem;
+  flex-shrink: 1;
+  padding: 2rem 1rem;
+  box-shadow: 8px 0px 16px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-bottom div h2 {
+  font-size: 2.5rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+  width: max-content;
+}
+
+.home-bottom div:nth-child(2) h2 {
+  color: var(--secondary-main);
+  border-bottom: 3px solid var(--primary-main);
+  padding-inline: 1rem;
+}
+
+.home-bottom div:first-child h2 {
+  color: var(--primary-main);
+  border-bottom: 3px solid var(--secondary-main);
+  padding-inline: 1rem;
+}
+
+.home-bottom div:first-child p {
+  font-size: 1.1rem;
+  padding-inline: 2rem;
+}
+
+.home-bottom div:nth-child(2) ul li {
+  font-size: 1.1rem;
+}
+
+.home-about {
+  padding: 2rem;
+}
+
+.home-about h1 {
+  color: var(--primary-main);
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.home-about p {
+  font-size: 1.25rem;
+}
+
+.home-top img {
+  width: 100%;
 }
 
 .home-card-wrap {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 5rem;
+  justify-content: space-around;
+  gap: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
 }
 
 .home-card {
@@ -1127,6 +1201,19 @@ footer ul li a:hover {
 @media only screen and (max-width: 900px) {
   .card-wrap {
     grid-template-columns: 1fr;
+  }
+
+  .home-misi ul {
+    padding-inline: 1rem;
+  }
+
+  .home-bottom > div {
+    margin-inline: 1rem;
+  }
+
+  .home-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .motor-care,
