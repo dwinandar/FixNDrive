@@ -376,6 +376,6 @@ function prevSlide() {
   showSlides();
 }
 
-const intervalCarousel = setInterval(nextSlide, 4000);
+// const intervalCarousel = setInterval(nextSlide, 4000);
 
 showSlides();
