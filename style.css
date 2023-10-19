@@ -421,7 +421,7 @@ li {
 .find-out-btn {
   margin-block: 1rem;
   font-size: medium;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 6px;
   background: var(--primary-main);
   color: var(--neutral-10);
@@ -1094,8 +1094,8 @@ img.resetpass-img {
 
 /* FOOTER */
 footer p,
-footer h3,
 footer h4,
+footer h5,
 footer label {
   color: var(--neutral-10);
 }
@@ -1157,6 +1157,10 @@ footer label {
   padding-block: 1.5rem;
 }
 
+footer p {
+  font-size: 14px;
+}
+
 .footer-bot :last-child {
   display: flex;
   gap: 3rem;
@@ -1167,7 +1171,7 @@ footer ul {
   flex-direction: column;
 }
 
-footer ul h3 {
+footer ul h4 {
   margin-bottom: 10px;
 }
 
