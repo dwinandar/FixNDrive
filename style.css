@@ -220,6 +220,11 @@ li {
   flex-direction: column;
 }
 
+.future-care {
+  display: flex;
+  flex-direction: column;
+}
+
 .home-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
