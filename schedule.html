@@ -19,7 +19,61 @@
   <body>
     <nav class="desktop-navbar" id="navbar"></nav>
     <main class="section jadwal">
-      <h1 class="heading-jadwal">Jadwal</h1>
+      <div class="jadwal-top">
+        <div class="jadwal-left">
+          <div>
+            <img
+              src="assets/location-marker.png"
+              alt="location-marker"
+            />Pesanggaran, Denpasar Selatan
+          </div>
+          <div class="wrap-jartem">
+            <div>
+              <p>Jarak Tempuh Awal</p>
+              <div>
+                <input type="checkbox" name="checkbox" id="cek" />
+                <label for="nol">Input dari Nol</label>
+              </div>
+              <input type="text" placeholder="Masukkan Jarak Tempuh" />
+            </div>
+            <div>
+              <p>Jarak Tempuh</p>
+              <input type="text" placeholder="Jarak Tempuh" />
+            </div>
+            <div>
+              <p>Total Jarak Tempuh</p>
+              <input type="text" placeholder="Total Jarak Tempuh" />
+            </div>
+          </div>
+
+          <div class="tracker-btn">
+            <button>Jeda Tracker</button>
+            <button>Atur Ulang</button>
+          </div>
+        </div>
+        <div class="jadwal-right">
+          <div><img src="assets/bro.png" alt="bro" /></div>
+          <div>
+            <p>Silahkan pilih list pengingat perawatan</p>
+            <div>
+              <input type="checkbox" name="checkbox" id="cek" />
+              <label for="nol">Pengingat ganti oli mesin</label>
+            </div>
+            <div>
+              <input type="checkbox" name="checkbox" id="cek" />
+              <label for="nol">Pengingat ganti filter udara</label>
+            </div>
+            <div>
+              <input type="checkbox" name="checkbox" id="cek" />
+              <label for="nol">Pengingat ganti kampas rem</label>
+            </div>
+            <div>
+              <input type="checkbox" name="checkbox" id="cek" />
+              <label for="nol">Pengingat ganti oli gardan</label>
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
         <p class="sub-heading-jadwal">Jadwal Perawatan Yang Akan Datang</p>
         <div class="wrap-card-jadwal">

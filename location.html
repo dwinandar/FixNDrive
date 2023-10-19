@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Location page for FixNDrive website" />
+
+    <title>FixNDrive | Location</title>
+    <link rel="icon" type="image/svg+xml" href="assets/fnd-icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="desktop-navbar" id="navbar"></nav>
+    <main class="section location">
+      <h1>Lokasi</h1>
+      <div class="search-location">
+        <img src="assets/material-symbols_search.svg" alt="search-icon" />
+        <input
+          type="text"
+          name="cari-topik"
+          id="topik-search"
+          placeholder="Cari Lokasi"
+          class="custom-input"
+        />
+        <button>Cari</button>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6866.422090452557!2d104.09863142234941!3d1.184789011691409!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da29d4f035b095%3A0x71a56998b047f2c6!2sApple%20Developer%20Academy%20%40IL!5e1!3m2!1sid!2sid!4v1697678089487!5m2!1sid!2sid"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </main>
+
+    <footer id="footer"></footer>
+    <script src="main.js"></script>
+  </body>
+</html>

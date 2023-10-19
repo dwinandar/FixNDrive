@@ -48,6 +48,8 @@ if (user === "login") {
             ? "active-nav"
             : path === "/schedule.html"
             ? "active-nav"
+            : path === "/location.html"
+            ? "active-nav"
             : ""
         }">Layanan</span>
         <img src="${
@@ -57,7 +59,7 @@ if (user === "login") {
           <li><a href="/carcare.html">Perawatan Mobil</a></li>
           <li><a href="/motorcare.html">Perawatan Motor</a></li>
           <li><a href="/schedule.html">Jadwal</a></li>
-          <li><a href="#">Lokasi Perawatan</a></li>
+          <li><a href="/location.html">Lokasi Perawatan</a></li>
         </ul>
       </div>
     </li>
