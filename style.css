@@ -53,7 +53,7 @@ li {
 
 .desktop-navbar > ul {
   display: flex;
-  gap: 0.5rem;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -244,10 +244,11 @@ li {
   flex-shrink: 1;
   padding: 2rem 1rem;
   box-shadow: 8px 0px 16px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 6px;
 }
 
 .home-bottom div h2 {
@@ -319,7 +320,7 @@ li {
 .find-out-btn {
   margin-block: 1rem;
   font-size: medium;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 6px;
   background: var(--primary-main);
   color: var(--neutral-10);
@@ -1126,8 +1127,8 @@ img.resetpass-img {
 
 /* FOOTER */
 footer p,
-footer h3,
 footer h4,
+footer h5,
 footer label {
   color: var(--neutral-10);
 }
@@ -1189,6 +1190,10 @@ footer label {
   padding-block: 1.5rem;
 }
 
+footer p {
+  font-size: 14px;
+}
+
 .footer-bot :last-child {
   display: flex;
   gap: 3rem;
@@ -1199,7 +1204,7 @@ footer ul {
   flex-direction: column;
 }
 
-footer ul h3 {
+footer ul h4 {
   margin-bottom: 10px;
 }
 

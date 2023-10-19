@@ -48,8 +48,6 @@ if (user === "login") {
             ? "active-nav"
             : path === "/schedule.html"
             ? "active-nav"
-            : path === "/location.html"
-            ? "active-nav"
             : ""
         }">Layanan</span>
         <img src="${
@@ -322,17 +320,17 @@ footer
   <a href="#"><img src="${window.origin}/assets/Logo-footer.svg" alt="footer-logo" /></a>
 </div>
 <ul>
-  <h3>Lihat konten lainnya</h3>
-  <h4>Layanan</h4>
+  <h4>Lihat konten lainnya</h4>
+  <p>Layanan</p>
   <li><a href="carcare.html">Perawatan Mobil</a></li>
   <li><a href="/motorcare.html">Perawatan Motor</a></li>
-  <h4>Komunitas</h4>
+  <p>Komunitas</p>
   <li><a href="/forum.html">Forum</a></li>
-  <h4>Temukan Kami</h4>
+  <p>Temukan Kami</p>
   <li><a href="/contact.html">Kontak Kami</a></li>
 </ul>
 <div>
-  <h3>Bergabung untuk langganan</h3>
+  <h4>Bergabung untuk langganan</h4>
   <form>
     <label for="news">Email Kamu</label>
     <input
