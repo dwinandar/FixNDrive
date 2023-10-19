@@ -1,4 +1,4 @@
-@import url("https://fonts.cdnfonts.com/css/product-sans");
+@import url('https://fonts.cdnfonts.com/css/product-sans');
 
 :root {
   --primary-main: #4c4ddc;
@@ -18,7 +18,7 @@
   margin: 0;
   box-sizing: border-box;
   color: #000;
-  font-family: "Product Sans", sans-serif;
+  font-family: 'Product Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -44,8 +44,7 @@ li {
   padding: 1rem 2rem;
   border-radius: 8px;
   background: #fff;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
   border: 1px solid var(--neutral-30);
   z-index: 1;
   transition: all 0.3s;
@@ -53,7 +52,7 @@ li {
 
 .desktop-navbar > ul {
   display: flex;
-  gap: 0.5rem;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -145,8 +144,7 @@ li {
   border: 1px solid var(--neutral-40);
   opacity: 0;
   display: none;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
   background: var(--neutral-10);
 }
 
@@ -270,7 +268,7 @@ li {
 } */
 
 .custom-icon {
-  list-style-type: url("asset/checkbox-circle-fill.svg");
+  list-style-type: url('asset/checkbox-circle-fill.svg');
 }
 
 .carousel-prev,
@@ -304,8 +302,8 @@ li {
   color: #4bd37b;
   font-size: 1em;
   font-weight: 900;
-  content: "\f058";
-  font-family: "Font Awesome 5 Free";
+  content: '\f058';
+  font-family: 'Font Awesome 5 Free';
   font-weight: 700;
 }
 
@@ -347,11 +345,11 @@ li {
   width: 28.125rem;
   flex-shrink: 1;
   padding: 2rem 1rem;
-  box-shadow: 8px 0px 16px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 8px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 6px;
 }
 
 .home-bottom div h2 {
@@ -596,7 +594,7 @@ input#terms-label {
   height: 1rem;
 }
 
-.radio-button input[type="radio"] {
+.radio-button input[type='radio'] {
   display: none;
 }
 
@@ -611,7 +609,7 @@ input#terms-label {
   background-color: #f0f0f0;
 }
 
-.radio-button input[type="radio"]:checked + label {
+.radio-button input[type='radio']:checked + label {
   background-color: #4c4ddc;
   color: white;
   border: 1px solid #4c4ddc;
@@ -776,8 +774,7 @@ img.resetpass-img {
 .card {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 6px 0px rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 6px 0px rgba(0, 0, 0, 0.02);
 }
 
 .card-item img {
@@ -1025,8 +1022,7 @@ img.resetpass-img {
 .topic-box {
   border-radius: 5px;
   border: 1px solid #eaeaea;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 6px 0px rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 6px 0px rgba(0, 0, 0, 0.02);
   padding: 1.563rem 1.875rem;
   margin-inline: 1rem;
   display: flex;
