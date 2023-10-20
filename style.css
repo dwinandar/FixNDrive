@@ -785,13 +785,17 @@ img.resetpass-img {
 .jadwal {
   width: 90%;
   max-width: 1200px;
-  padding-top: 10rem;
+  padding-block: 10rem;
   margin-inline: auto;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .jadwal-top {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .heading-jadwal {
@@ -807,14 +811,20 @@ img.resetpass-img {
   align-items: center;
   border-radius: 6px;
   border: 1px solid #e0e0e0;
+  font-size: 1rem;
+}
+
+.wrap-jartem div p,
+.jadwal-right div p,
+.jadwal-right div label {
+  font-size: 1.1rem;
 }
 
 .jadwal-left {
   display: flex;
   flex-direction: column;
-  width: max-content;
   border-radius: 6px;
-  padding: 2rem;
+  padding: 1rem;
   background: var(--neutral-10);
   box-shadow: 8px 0px 16px 0px rgba(0, 0, 0, 0.08),
     0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
@@ -826,9 +836,13 @@ img.resetpass-img {
   align-items: center;
   border-radius: 6px;
   background: #fff;
-  padding-inline: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
   box-shadow: 8px 0px 16px 0px rgba(0, 0, 0, 0.08),
     0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .tracker-btn {
@@ -854,8 +868,14 @@ img.resetpass-img {
   color: var(--neutral-60);
   font-size: 1.25rem;
   border-radius: 6px;
-  border: 1.5px solid var(--neutral-40, #e0e0e0);
+  border: 1.5px solid var(--neutral-40);
   cursor: pointer;
+}
+
+.tracker-btn :nth-child(2):hover {
+  background-color: var(--secondary-main);
+  color: var(--neutral-10);
+  border: 1.5px solid var(--secondary-main);
 }
 
 .jadwal-left :first-child {
@@ -874,6 +894,7 @@ img.resetpass-img {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .sub-heading-jadwal {
@@ -1268,6 +1289,7 @@ footer ul li a:hover {
   .fa {
     padding: 0.5rem;
     transition: all 0.3s;
+    cursor: pointer;
   }
 
   .btn-nav,
